@@ -12,6 +12,17 @@ spring:
     username: root
     password: root
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7002.com:7002/eureka/, http://eureka7001.com:7002/eureka/
+  instance:
+    # 加入后，访问eureka web ui可以将服务地址从服务名：ip更换为instance-id
+    instance-id: payment8001
+    # 访问路径显示ip地址
+    prefer-ip-address: true
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
